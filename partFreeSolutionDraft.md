@@ -13,18 +13,8 @@
 
 ## Requirement techniques
 
-- Đảm bảo tất cả User đã có tài khoản, với mỗi account phải có 5 parts gỗ default => nên là 1 bảng ở DB Game Service (part_woody). Có thể viết code để generate ra Query init records cho toàn bộ User tính tời thời điểm run query.
+- Đảm bảo tất cả User đã có tài khoản, với mỗi account phải có 5 parts gỗ default. Có thể viết code để generate ra Query init records cho toàn bộ User tính tời thời điểm run query. Lưu chung những parts này vào bảng Asset
 
-- Cấu trúc bảng part_woody:
-  id
-  user_id
-  type
-  sub_type
-  tier
-  name
-  description
-  attributes
-  image
 - Đảm bảo logic khi User đăng ký tài khoản mới sẽ mặc định có 5 parts gỗ default
 
 -> nhân đây refactor lại bảng Global Asset, lưu bot_index và attached_slot ra 1 bảng riêng bên Game Service, tránh lưu thông tin không cần thiết ở bảng Global. Dễ cho việc query và debug
